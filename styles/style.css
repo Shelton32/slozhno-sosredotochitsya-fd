@@ -5,7 +5,6 @@
     background-size: cover;
     background-attachment: fixed;
     font-family: 'IBM Plex mono', monospace;
-    width: 375px;  /* жёсткая ширина по мобильному макету */
 }
 
 .decorated-zone {
@@ -38,15 +37,15 @@
 .header {
     display: grid;
     grid-template-rows: auto 4fr auto 3fr auto 3fr;  /* пропорции свободного места по мобильному макету */
-    height: 668px;  /* жёсткая высота по мобильному макету */
+    min-height: 668px;  /* минимальная высота по мобильному макету, при большем контенте шапка вырастет */
     padding: 20px 10px;  /* на телефоне отступы по бокам 10px */
 }
 
 .header__rec {
     display: var(--rec-display);
     position: absolute;
-    top: 20px;
-    right: 29px;
+    top: 14px;    /* по центру уголка: уголок на телефоне в 10px от края */
+    right: 19px;
     color: var(--accent-color);
     font-size: 18px;
     line-height: 1;
@@ -183,23 +182,17 @@
     outline: none;
 }
 
-.intro__content {
+/* общая обёртка карточек: в первой, второй и третьей секциях */
+.list {
     display: grid;
     gap: 20px;
 }
 
 .reasons__list {
-    display: grid;
     grid-column: 1/-1;
-    gap: 20px;
 }
 
 .tips__content {
-    display: grid;
-    gap: 20px;
-}
-
-.tips__list {
     display: grid;
     gap: 20px;
 }
@@ -235,7 +228,7 @@
 .footer {
     display: grid;
     place-items: center;
-    height: 668px;
+    min-height: 668px;
     padding: 20px;
 }
 
@@ -254,10 +247,6 @@
 
 /* Планшет: экраны от 768px */
 @media (min-width: 768px) {
-    .page {
-        width: 768px;  /* жёсткая ширина по планшетному макету */
-    }
-
     .decorated-zone::before {
         top: 20px;
         right: 20px;
@@ -268,8 +257,13 @@
         left: 20px;
     }
 
+    .header__rec {
+        top: 24px;    /* по центру уголка: с планшета уголок в 20px от края */
+        right: 29px;
+    }
+
     .header {
-        height: 1024px;  /* жёсткая высота по планшетному макету */
+        min-height: 1024px;  /* минимальная высота по планшетному макету */
         padding: 20px;
         grid-template-rows: auto 2fr auto 1fr auto 1fr;
     }
@@ -290,7 +284,7 @@
     }
 
     .footer {
-        height: 1024px;
+        min-height: 1024px;
     }
 
     .footer__title {
@@ -338,17 +332,13 @@
 
 /* Десктоп: экраны от 1024px */
 @media (min-width: 1024px) {
-    .page {
-        width: 1024px;  /* жёсткая ширина по десктопному макету */
-    }
-
     .header {
-        height: 768px;  /* жёсткая высота по десктопному макету */
+        min-height: 768px;  /* минимальная высота по десктопному макету */
         grid-template-rows: auto 27fr auto 10fr auto 12fr;
     }
 
     .footer {
-        height: 768px;
+        min-height: 768px;
     }
 
     .header__theme-menu {
