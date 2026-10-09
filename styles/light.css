@@ -9,4 +9,28 @@
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
   */
+    --page-background-image: url("../images/cover-image-light.png");
+    --page-background-color: #ffeef5;
+    --accent-color: #353430;
+    --accent-color-text: #353430;
+    --title-color: #FFC2E6;
+    --subtitle-color: #353430;
+    --decor-color: #ff8fc8;
+    --section-title-color: #353430;
+    --rec-display: none;
+}
+
+/* Режим «Авто» при светлой теме в системе: те же переменные, что и выше */
+@media (prefers-color-scheme: light) {
+    :root {
+        --page-background-image: url("../images/cover-image-light.png");
+        --page-background-color: #ffeef5;
+        --accent-color: #353430;
+        --accent-color-text: #353430;
+        --title-color: #FFC2E6;
+        --subtitle-color: #353430;
+        --decor-color: #ff8fc8;
+        --section-title-color: #353430;
+        --rec-display: none;
+    }
 }
